@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pets Universe - Gestión de Citas</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../Public/css/styles.css">
+</head>
+
+<body class="bg-light">
+
+    <!-- NAVBAR -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-space-dark sticky-top">
+        <div class="container">
+            <a class="navbar-brand d-flex align-items-center gap-2" href="DashboardCliente.html">
+                <img src="../../Public/img/logo_actualizado_Sin_Texto.png" alt="Logo" class="brand-img" style="height: 32px;">
+                <span class="h3 mb-0 brand-title text-white">Pets<span>Universe</span></span>
+            </a>
+            <div class="ms-auto">
+                <a href="DashboardUsuario.html" class="btn btn-outline-light btn-sm rounded-pill px-3">
+                    <i class="bi bi-arrow-left me-1"></i> 
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- CONTENEDOR PRINCIPAL CON MENÚ LATERAL Y PANEL DE GESTIÓN DE CITAS (COMPACTO) -->
+    <main class="container py-4">
+        <div class="row g-3">
+            
+            <!-- MENÚ LATERAL DE GESTIÓN DE CITAS -->
+            <div class="col-lg-4">
+                <div class="card border-0 shadow-sm rounded-4 p-3 bg-white h-100">
+                    <h5 class="fw-bold mb-2 text-dark">Panel de Citas</h5>
+                    <p class="text-muted small mb-3">Administra tu agenda y estado clínico sin desbordamientos.</p>
+                    
+                    <div class="list-group list-group-flush nav-tabs-custom border-0" id="citasTabs" role="tablist">
+                        <button class="list-group-item list-group-item-action active border-0 rounded-3 mb-2 py-2 px-3 small fw-medium" id="tab-historial" data-bs-toggle="list" data-bs-target="#content-historial" type="button" role="tab">
+                            <i class="bi bi-calendar-check me-2 text-pets-blue"></i> Historial y Mis Citas
+                        </button>
+                        <button class="list-group-item list-group-item-action border-0 rounded-3 mb-2 py-2 px-3 small fw-medium" id="tab-agendar" data-bs-toggle="list" data-bs-target="#content-agendar" type="button" role="tab">
+                            <i class="bi bi-plus-circle-fill me-2 text-pets-blue"></i> Agendar Cita Nueva
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CONTENIDO DE LAS SECCIONES DE CITAS  -->
+            <div class="col-lg-8">
+                <div class="tab-content">
+
+                    <!-- 1. SECCIÓN: HISTORIAL Y ESTADO DE CITAS -->
+                    <div class="tab-pane fade show active" id="content-historial" role="tabpanel">
+                        <div class="card border-0 shadow-sm rounded-4 p-4 bg-white">
+                            <h4 class="fw-bold mb-3 text-dark">Historial de Citas</h4>
+                            
+                            <div class="table-responsive">
+                                <table class="table align-middle small mb-0">
+                                    <thead class="table-light">
+                                        <tr>
+                                            <th>Mascota</th>
+                                            <th>Servicio</th>
+                                            <th>Fecha y Hora</th>
+                                            <th>Estado</th>
+                                            <th>Acciones</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td class="fw-bold">Max</td>
+                                            <td>Consulta General</td>
+                                            <td>18 Sep 2026, 10:00 AM</td>
+                                            <td><span class="badge bg-success-subtle text-success">Confirmada</span></td>
+                                            <td>
+                                                <div class="d-flex gap-1">
+                                                    <button class="btn btn-sm btn-outline-primary rounded-pill px-2 py-0" data-bs-toggle="modal" data-bs-target="#modalReprogramar" title="Reprogramar">
+                                                        <i class="bi bi-calendar-event"></i>
+                                                    </button>
+                                                    <button class="btn btn-sm btn-outline-danger rounded-pill px-2 py-0" title="Cancelar Cita">
+                                                        <i class="bi bi-x-circle"></i>
+                                                    </button>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="fw-bold">Michi</td>
+                                            <td>Vacunación</td>
+                                            <td>10 Ago 2026, 03:30 PM</td>
+                                            <td><span class="badge bg-secondary-subtle text-secondary">Completada</span></td>
+                                            <td><span class="text-muted">Finalizada</span></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 2. SECCIÓN: AGENDAR CITA NUEVA (OPTIMIZADO EN DOS COLUMNAS SIN SCROLL) -->
+                    <div class="tab-pane fade" id="content-agendar" role="tabpanel">
+                        <div class="card border-0 shadow-sm rounded-4 p-4 bg-white">
+                            <h4 class="fw-bold mb-3 text-dark">Formulario de Agendamiento</h4>
+                            <form id="formNuevaCita">
+                                <div class="row g-2">
+                                    <div class="col-md-6 mb-2">
+                                        <label class="form-label small fw-bold mb-1">Mascota</label>
+                                        <select class="form-select form-select-sm" required>
+                                            <option value="" selected disabled>Elige un paciente...</option>
+                                            <option value="1">Max (Perro - Labrador)</option>
+                                            <option value="2">Michi (Gato - Angora)</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-md-6 mb-2">
+                                        <label class="form-label small fw-bold mb-1">Servicio</label>
+                                        <select class="form-select form-select-sm" required>
+                                            <option value="" selected disabled>Elige el servicio...</option>
+                                            <option value="consulta">Consulta General ($45.000)</option>
+                                            <option value="vacuna">Vacunación y Desparasitación</option>
+                                            <option value="estetica">Estética y Peluquería</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-12 mb-2">
+                                        <label class="form-label small fw-bold mb-1">Veterinario Asignado</label>
+                                        <select class="form-select form-select-sm" required>
+                                            <option value="" selected disabled>Selecciona profesional...</option>
+                                            <option value="dr_gomez">Dra. Ana Gómez (Pequeños Animales)</option>
+                                            <option value="dr_perez">Dr. Carlos Pérez (Cirujano)</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-md-6 mb-2">
+                                        <label class="form-label small fw-bold mb-1">Fecha</label>
+                                        <input type="date" class="form-control form-control-sm" required>
+                                    </div>
+                                    <div class="col-md-6 mb-2">
+                                        <label class="form-label small fw-bold mb-1">Hora</label>
+                                        <input type="time" class="form-control form-control-sm" required>
+                                    </div>
+                                    <div class="col-12 text-end mt-3">
+                                        <button type="submit" class="btn btn-primary btn-sm rounded-pill px-4">Reservar Cita</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- MODAL PARA REPROGRAMAR CITA EXISTENTE -->
+    <div class="modal fade" id="modalReprogramar" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-sm">
+            <div class="modal-content border-0 shadow-lg rounded-4">
+                <div class="modal-header bg-space-dark text-white border-0 py-2">
+                    <h6 class="modal-title fw-bold">Reprogramar Cita</h6>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body p-3">
+                    <form id="formReprogramar">
+                        <div class="mb-2">
+                            <label class="form-label small fw-bold mb-1">Nueva Fecha</label>
+                            <input type="date" class="form-control form-control-sm" required>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label small fw-bold mb-1">Nueva Hora</label>
+                            <input type="time" class="form-control form-control-sm" required>
+                        </div>
+                        <div class="text-end">
+                            <button type="button" class="btn btn-outline-secondary btn-sm rounded-pill px-3" data-bs-dismiss="modal">Cerrar</button>
+                            <button type="submit" class="btn btn-primary btn-sm rounded-pill px-3">Actualizar</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../../Public/js/scripts.js"></script>
+</body>
+</html>

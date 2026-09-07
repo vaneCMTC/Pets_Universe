@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pets Universe - Panel de Administrador</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../Public/css/styles.css">
+</head>
+
+<body class="bg-light">
+
+    <div class="admin-layout">
+
+        <!-- OVERLAY MÓVIL -->
+        <div class="admin-overlay" id="adminOverlay"></div>
+
+        <!-- SIDEBAR -->
+        <aside class="admin-sidebar" id="adminSidebar">
+            <a href="DashboardAdmin.html" class="admin-sidebar-brand">
+                <img src="../../Public/img/logo_actualizado_Sin_Texto.png" alt="Logo">
+                <span>Pets<span>Universe</span></span>
+            </a>
+
+            <div class="admin-sidebar-user">
+                <div class="user-avatar-lg bg-pets-blue text-space-dark rounded-circle d-flex align-items-center justify-content-center fw-bold" style="width: 42px; height: 42px;">AD</div>
+                <div>
+                    <p>Admin General</p>
+                    <span class="admin-role-badge">Administrador</span>
+                </div>
+            </div>
+
+            <nav class="admin-nav">
+                <span class="admin-nav-label">Sistema</span>
+                <a href="DashboardAdmin.html" class="admin-nav-link active"><i class="bi bi-speedometer2"></i> Panel General</a>
+
+                <span class="admin-nav-label">Gestión</span>
+                <a href="UsuariosAdmin.html" class="admin-nav-link"><i class="bi bi-people-fill"></i> Usuarios</a>
+                <a href="VeterinariosAdmin.html" class="admin-nav-link"><i class="bi bi-heart-pulse-fill"></i> Veterinarios</a>
+                <a href="CitasAdmin.html" class="admin-nav-link"><i class="bi bi-calendar3"></i> Citas</a>
+                <a href="ServiciosAdmin.html" class="admin-nav-link"><i class="bi bi-tags-fill"></i> Servicios</a>
+
+                <span class="admin-nav-label">Cuenta</span>
+                <a href="ConfiguracionAdmin.html" class="admin-nav-link"><i class="bi bi-gear-fill"></i> Configuración</a>
+                <a href="Login.html" class="admin-nav-link link-logout"><i class="bi bi-box-arrow-right"></i> Cerrar Sesión</a>
+            </nav>
+        </aside>
+
+        <!-- CONTENIDO PRINCIPAL -->
+        <div class="admin-main">
+
+            <!-- TOPBAR -->
+            <header class="admin-topbar">
+                <div class="d-flex align-items-center gap-2">
+                    <button class="admin-sidebar-toggle" id="adminSidebarToggle"><i class="bi bi-list"></i></button>
+                    <div>
+                        <h5 class="admin-page-title">Panel General</h5>
+                        <p class="admin-page-subtitle">Resumen global del sistema Pets Universe</p>
+                    </div>
+                </div>
+                <div class="d-flex align-items-center gap-3">
+                    <a href="#" class="text-space-dark position-relative">
+                        <i class="bi bi-bell fs-5"></i>
+                        <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger" style="font-size: 0.6rem;">3</span>
+                    </a>
+                    <span class="text-muted small d-none d-md-inline">Domingo, 06 Sep 2026</span>
+                </div>
+            </header>
+
+            <!-- CONTENIDO -->
+            <main class="admin-content">
+
+                <!-- KPIs -->
+                <div class="row g-3 mb-4">
+                    <div class="col-6 col-lg-3">
+                        <div class="kpi-card">
+                            <div class="kpi-icon bg-primary-subtle text-primary"><i class="bi bi-people-fill"></i></div>
+                            <div>
+                                <p class="kpi-value">1.248</p>
+                                <p class="kpi-label">Usuarios Activos</p>
+                                <span class="kpi-trend-up"><i class="bi bi-arrow-up-short"></i>4.2% este mes</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-6 col-lg-3">
+                        <div class="kpi-card">
+                            <div class="kpi-icon bg-success-subtle text-success"><i class="bi bi-heart-pulse-fill"></i></div>
+                            <div>
+                                <p class="kpi-value">18</p>
+                                <p class="kpi-label">Veterinarios en Servicio</p>
+                                <span class="kpi-trend-up"><i class="bi bi-arrow-up-short"></i>2 nuevos</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-6 col-lg-3">
+                        <div class="kpi-card">
+                            <div class="kpi-icon" style="background:#e6fffa; color:#0d9488;"><i class="bi bi-calendar-check-fill"></i></div>
+                            <div>
+                                <p class="kpi-value">37</p>
+                                <p class="kpi-label">Citas Agendadas Hoy</p>
+                                <span class="kpi-trend-up"><i class="bi bi-arrow-up-short"></i>12% vs ayer</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-6 col-lg-3">
+                        <div class="kpi-card">
+                            <div class="kpi-icon bg-warning-subtle text-warning"><i class="bi bi-calendar-week-fill"></i></div>
+                            <div>
+                                <p class="kpi-value">214</p>
+                                <p class="kpi-label">Citas de la Semana</p>
+                                <span class="kpi-trend-down"><i class="bi bi-arrow-down-short"></i>3.1% vs sem. anterior</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- GRÁFICAS -->
+                <div class="row g-3 mb-4">
+                    <div class="col-lg-8">
+                        <div class="admin-card h-100">
+                            <div class="d-flex justify-content-between align-items-center mb-3">
+                                <div>
+                                    <h6 class="fw-bold text-dark mb-0">Citas Agendadas</h6>
+                                    <p class="text-muted small mb-0">Comparativo semanal vs. mensual</p>
+                                </div>
+                                <select class="form-select form-select-sm w-auto" id="selectRangoCitas">
+                                    <option value="semana" selected>Esta semana</option>
+                                    <option value="mes">Este mes</option>
+                                </select>
+                            </div>
+                            <canvas id="chartCitas" height="130"></canvas>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="admin-card h-100">
+                            <h6 class="fw-bold text-dark mb-1">Distribución de Servicios</h6>
+                            <p class="text-muted small mb-3">Participación por categoría (mes actual)</p>
+                            <canvas id="chartServicios" height="200"></canvas>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row g-3">
+                    <div class="col-lg-7">
+                        <div class="admin-card h-100">
+                            <h6 class="fw-bold text-dark mb-1">Actividad e Ingresos de Usuarios</h6>
+                            <p class="text-muted small mb-3">Nuevos registros en la plataforma</p>
+                            <canvas id="chartUsuarios" height="150"></canvas>
+                        </div>
+                    </div>
+                    <div class="col-lg-5">
+                        <div class="admin-card h-100">
+                            <div class="d-flex justify-content-between align-items-center mb-3">
+                                <h6 class="fw-bold text-dark mb-0">Últimas Citas Registradas</h6>
+                                <a href="CitasAdmin.html" class="small text-decoration-none fw-semibold text-pets-blue">Ver todas</a>
+                            </div>
+                            <div class="table-responsive">
+                                <table class="table table-admin table-hover small mb-0">
+                                    <thead>
+                                        <tr>
+                                            <th>Mascota</th>
+                                            <th>Veterinario</th>
+                                            <th>Estado</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td class="fw-semibold">Max</td>
+                                            <td>Dra. Ana Gómez</td>
+                                            <td><span class="status-dot bg-success"></span>Confirmada</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="fw-semibold">Michi</td>
+                                            <td>Dr. Carlos Pérez</td>
+                                            <td><span class="status-dot bg-secondary"></span>Completada</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="fw-semibold">Rocky</td>
+                                            <td>Dra. Valentina Ríos</td>
+                                            <td><span class="status-dot" style="background:#f59e0b;"></span>Pendiente</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="fw-semibold">Luna</td>
+                                            <td>Dra. Ana Gómez</td>
+                                            <td><span class="status-dot bg-danger"></span>Cancelada</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </main>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+    <script src="../../Public/js/scripts.js"></script>
+    <script src="../../Public/js/adminScripts.js"></script>
+    <script>
+        // Gráfica de citas (barras semana/mes)
+        const dataSemana = [12, 18, 9, 22, 15, 27, 20];
+        const dataMes = [180, 205, 175, 214];
+        const ctxCitas = document.getElementById('chartCitas');
+        const chartCitas = new Chart(ctxCitas, {
+            type: 'bar',
+            data: {
+                labels: ['Lun', 'Mar', 'Mié', 'Jue', 'Vie', 'Sáb', 'Dom'],
+                datasets: [{
+                    label: 'Citas agendadas',
+                    data: dataSemana,
+                    backgroundColor: '#1adfbe',
+                    borderRadius: 6,
+                    maxBarThickness: 34
+                }]
+            },
+            options: {
+                plugins: { legend: { display: false } },
+                scales: { y: { beginAtZero: true, grid: { color: '#f1f5f9' } }, x: { grid: { display: false } } }
+            }
+        });
+
+        document.getElementById('selectRangoCitas').addEventListener('change', function () {
+            if (this.value === 'mes') {
+                chartCitas.data.labels = ['Sem. 1', 'Sem. 2', 'Sem. 3', 'Sem. 4'];
+                chartCitas.data.datasets[0].data = dataMes;
+            } else {
+                chartCitas.data.labels = ['Lun', 'Mar', 'Mié', 'Jue', 'Vie', 'Sáb', 'Dom'];
+                chartCitas.data.datasets[0].data = dataSemana;
+            }
+            chartCitas.update();
+        });
+
+        // Gráfica de distribución de servicios (dona)
+        new Chart(document.getElementById('chartServicios'), {
+            type: 'doughnut',
+            data: {
+                labels: ['Medicina General', 'Prevención', 'Estética', 'Cirugía'],
+                datasets: [{
+                    data: [38, 27, 20, 15],
+                    backgroundColor: ['#1adfbe', '#0a0092', '#ffd700', '#000b29'],
+                    borderWidth: 0
+                }]
+            },
+            options: { plugins: { legend: { position: 'bottom', labels: { boxWidth: 10, font: { size: 10 } } } }, cutout: '68%' }
+        });
+
+        // Gráfica de nuevos usuarios / ingresos
+        new Chart(document.getElementById('chartUsuarios'), {
+            type: 'line',
+            data: {
+                labels: ['Abr', 'May', 'Jun', 'Jul', 'Ago', 'Sep'],
+                datasets: [{
+                    label: 'Nuevos usuarios',
+                    data: [64, 78, 90, 85, 102, 118],
+                    borderColor: '#0a0092',
+                    backgroundColor: 'rgba(26, 223, 190, 0.15)',
+                    tension: 0.35,
+                    fill: true,
+                    pointBackgroundColor: '#1adfbe'
+                }]
+            },
+            options: {
+                plugins: { legend: { display: false } },
+                scales: { y: { beginAtZero: true, grid: { color: '#f1f5f9' } }, x: { grid: { display: false } } }
+            }
+        });
+    </script>
+</body>
+</html>

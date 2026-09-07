@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pets Universe - Mis Mascotas</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../Public/css/styles.css">
+</head>
+
+<body class="bg-light">
+
+    <!-- NAVBAR -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-space-dark sticky-top">
+        <div class="container">
+            <a class="navbar-brand d-flex align-items-center gap-2" href="DashboardCliente.html">
+                <img src="../../Public/img/logo_actualizado_Sin_Texto.png" alt="Logo" class="brand-img" style="height: 35px;">
+                <span class="h2 mb-0 brand-title text-white">Pets<span>Universe</span></span>
+            </a>
+            <div class="ms-auto">
+                <a href="DashboardUsuario.html" class="btn btn-outline-light btn-sm rounded-pill px-3">
+                    <i class="bi bi-arrow-left me-1"></i> 
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- CONTENIDO PRINCIPAL -->
+    <main class="container py-5">
+        <div class="row mb-4 align-items-center">
+            <div class="col">
+                <h2 class="fw-bold text-dark mb-1">Mis Mascotas y Registro</h2>
+                <p class="text-muted small">Gestiona tus pacientes, revisa su historial clínico y registra nuevos miembros.</p>
+            </div>
+            <div class="col-auto">
+                <button class="btn btn-primary rounded-pill px-4 shadow-sm" data-bs-toggle="modal" data-bs-target="#modalMascota" onclick="prepararNuevaMascota()">
+                    <i class="bi bi-plus-lg me-1"></i> Registrar Mascota
+                </button>
+            </div>
+        </div>
+
+        <!-- LISTADO DE MASCOTAS -->
+        <div class="row g-4">
+            <div class="col-md-6 col-lg-4">
+                <div class="card border-0 shadow-sm rounded-4 p-4 h-100 bg-white">
+                    <div class="d-flex align-items-center gap-3 mb-3">
+                        <img src="https://images.unsplash.com/photo-1583337130417-3346a1be7dee?q=80&w=200" class="rounded-circle shadow-sm" style="width: 70px; height: 70px; object-fit: cover;" alt="Max">
+                        <div>
+                            <h4 class="fw-bold mb-0">Max</h4>
+                            <span class="badge bg-success-subtle text-success small">Activo</span>
+                        </div>
+                    </div>
+                    <p class="text-muted small mb-1"><i class="bi bi-shield-fill-check me-1 text-pets-blue"></i> Perro • Labrador (3 años)</p>
+                    <p class="text-muted small mb-3"><i class="bi bi-journal-medical me-1 text-pets-blue"></i> Historial: 2 Consultas previas</p>
+                    <div class="mt-auto pt-2 border-top d-flex justify-content-between align-items-center">
+                        <button class="btn btn-outline-primary btn-sm rounded-pill px-3" data-bs-toggle="modal" data-bs-target="#modalHistorial">Ver Historial</button>
+                        <div class="d-flex gap-2">
+                            <button class="btn btn-sm btn-outline-secondary rounded-circle" data-bs-toggle="modal" data-bs-target="#modalMascotaEditar" title="Editar"><i class="bi bi-pencil"></i></button>
+                            <button class="btn btn-sm btn-outline-danger rounded-circle" title="Eliminar"><i class="bi bi-trash"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- MODAL REGISTRO DE MASCOTA NUEVA -->
+    <div class="modal fade" id="modalMascota" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content border-0 shadow-lg rounded-4">
+                <div class="modal-header bg-space-dark text-white border-0">
+                    <h5 class="modal-title fw-bold">Registrar Nueva Mascota</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body p-4">
+                    <form id="formMascotaNueva">
+                        <div class="mb-3">
+                            <label class="form-label small fw-bold">Nombre</label>
+                            <input type="text" class="form-control" placeholder="Ej. Max" required>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label small fw-bold">Especie</label>
+                            <select class="form-select" required>
+                                <option value="" selected disabled>Selecciona especie...</option>
+                                <option value="Canino">Canino</option>
+                                <option value="Felino">Felino</option>
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label small fw-bold">Raza</label>
+                            <input type="text" class="form-control" placeholder="Ej. Labrador" required>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label small fw-bold">Edad (Años)</label>
+                            <input type="number" class="form-control" placeholder="Ej. 3" required>
+                        </div>
+                        <div class="text-end mt-4">
+                            <button type="button" class="btn btn-secondary rounded-pill px-4" data-bs-dismiss="modal">Cancelar</button>
+                            <button type="submit" class="btn btn-primary rounded-pill px-4">Guardar Datos</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- MODAL DOBLE DE EDICIÓN DE MASCOTA EXISTENTE -->
+    <div class="modal fade" id="modalMascotaEditar" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content border-0 shadow-lg rounded-4 overflow-hidden">
+                <div class="modal-header bg-space-dark text-white border-0">
+                    <h5 class="modal-title fw-bold">Editar Información de la Mascota</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body p-4">
+                    <form id="formMascotaEdicion">
+                        <div class="row g-4 align-items-center">
+                            
+                            <!-- TARJETA IZQUIERDA: FOTO, NOMBRE Y DATOS FIJOS -->
+                            <div class="col-md-5 text-center border-end-md pe-md-4">
+                                <div class="position-relative d-inline-block mb-3">
+                                    <img src="https://images.unsplash.com/photo-1583337130417-3346a1be7dee?q=80&w=200" class="rounded-circle shadow-sm" style="width: 100px; height: 100px; object-fit: cover;" alt="Max">
+                                    <label for="avatarMascotaInput" class="position-absolute bottom-0 end-0 bg-dark text-white rounded-circle p-2 shadow-sm" style="cursor: pointer; font-size: 12px;" title="Cambiar foto">
+                                        <i class="bi bi-camera-fill"></i>
+                                    </label>
+                                    <input type="file" id="avatarMascotaInput" class="d-none" accept="image/*">
+                                </div>
+                                <h4 class="fw-bold text-dark mb-1">Max</h4>
+                                <div class="text-muted small mb-2">
+                                    <span class="badge bg-light text-dark border">Perro</span> 
+                                    <span class="badge bg-light text-dark border">Labrador</span>
+                                </div>
+                                <p class="text-muted small mb-0 fst-italic">La especie y la raza están bloqueadas por seguridad del historial clínico.</p>
+                            </div>
+
+                            <!-- TARJETA DERECHA: CAMPOS EDITABLES (APODO, EDAD, PESO) -->
+                            <div class="col-md-7">
+                                <div class="mb-3">
+                                    <label class="form-label small fw-bold">Apodo / Nombre Cariñoso</label>
+                                    <input type="text" class="form-control" value="Maxi" placeholder="Ej. Maxi, Gordinflon">
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label small fw-bold">Edad (Años)</label>
+                                    <input type="number" class="form-control" value="3" required>
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label small fw-bold">Peso Actual (kg)</label>
+                                    <input type="number" step="0.1" class="form-control" value="28.5" placeholder="Ej. 28.5" required>
+                                </div>
+                                <div class="text-end mt-4">
+                                    <button type="button" class="btn btn-secondary rounded-pill px-4" data-bs-dismiss="modal">Cancelar</button>
+                                    <button type="submit" class="btn btn-primary rounded-pill px-4">Actualizar Datos</button>
+                                </div>
+                            </div>
+
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- MODAL HISTORIAL CLÍNICO -->
+    <div class="modal fade" id="modalHistorial" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content border-0 shadow-lg rounded-4">
+                <div class="modal-header bg-space-dark text-white border-0">
+                    <h5 class="modal-title fw-bold">Historial Clínico - Max</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body p-4">
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item py-3">
+                            <div class="d-flex justify-content-between">
+                                <span class="fw-bold text-primary">Consulta General</span>
+                                <small class="text-muted">15 de Mayo, 2026</small>
+                            </div>
+                            <p class="small text-muted mb-0 mt-1">Diagnóstico: Vacunación anual aplicada exitosamente sin novedades.</p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../../Public/js/scripts.js"></script>
+</body>
+</html>

@@ -1,0 +1,640 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pets Universe - Inicio al Universo de tu Mascota</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../Public/css/styles.css">
+</head>
+
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+        <div class="container">
+            <a class="navbar-brand d-flex align-items-center gap-2" href="inicio.html">
+                <img src="../../Public/img/logo_actualizado_Sin_Texto.png" alt="Pets Universe Logo" class="brand-img">
+                <span class="h2 mb-0 brand-title">Pets<span>Universe</span></span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto align-items-center">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#nosotros">Nosotros</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#servicios">Servicios</a>
+                    </li>
+
+                    <!-- Ícono de Notificaciones Moderno -->
+                    <li class="nav-item dropdown me-3">
+                        <a class="nav-link position-relative text-white px-2 py-1 rounded-circle transition-all hover-glass"
+                            href="#" id="notifDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <i class="bi bi-bell fs-5"></i>
+                            <!-- Insignia numérica moderna con pulso sutil -->
+                            <span
+                                class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger border border-dark small px-1 py-0 shadow-sm"
+                                style="font-size: 0.65rem;">
+                                2
+                            </span>
+                        </a>
+
+                        <!-- Panel Desplegable de Notificaciones Estilizado -->
+                        <ul class="dropdown-menu dropdown-menu-end shadow-lg border-0 rounded-4 p-2 mt-2"
+                            aria-labelledby="notifDropdown" style="width: 320px;">
+                            <li>
+                                <div class="d-flex align-items-center justify-content-between px-3 py-2 border-bottom">
+                                    <h6 class="fw-bold mb-0 text-dark small">Notificaciones</h6>
+                                    <span class="badge bg-primary-subtle text-primary rounded-pill"
+                                        style="font-size: 0.7rem;">2 nuevas</span>
+                                </div>
+                            </li>
+
+                            <!-- Lista de Notificaciones -->
+                            <div class="notifications-scroll py-1" style="max-height: 260px; overflow-y: auto;">
+                                <li>
+                                    <a class="dropdown-item rounded-3 p-2 mb-1 d-flex gap-2 align-items-start text-wrap"
+                                        href="#">
+                                        <div class="bg-success-subtle text-success rounded-circle p-2 d-flex align-items-center justify-content-center"
+                                            style="width: 32px; height: 32px; min-width: 32px;">
+                                            <i class="bi bi-calendar-check fs-6"></i>
+                                        </div>
+                                        <div>
+                                            <p class="mb-0 small fw-semibold text-dark">Cita Confirmada</p>
+                                            <p class="mb-0 text-muted" style="font-size: 0.75rem;">Tu cita para Max ha
+                                                sido agendada con éxito.</p>
+                                            <span class="text-muted opacity-75" style="font-size: 0.65rem;">Hace 5
+                                                minutos</span>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item rounded-3 p-2 d-flex gap-2 align-items-start text-wrap"
+                                        href="#">
+                                        <div class="bg-info-subtle text-info rounded-circle p-2 d-flex align-items-center justify-content-center"
+                                            style="width: 32px; height: 32px; min-width: 32px;">
+                                            <i class="bi bi-bell-fill fs-6"></i>
+                                        </div>
+                                        <div>
+                                            <p class="mb-0 small fw-semibold text-dark">Recordatorio de Vacuna</p>
+                                            <p class="mb-0 text-muted" style="font-size: 0.75rem;">Michi tiene pendiente
+                                                su refuerzo este mes.</p>
+                                            <span class="text-muted opacity-75" style="font-size: 0.65rem;">Hace 2
+                                                horas</span>
+                                        </div>
+                                    </a>
+                                </li>
+                            </div>
+
+                            <li>
+                                <hr class="dropdown-divider my-1">
+                            </li>
+                            <li>
+                                <a class="dropdown-item text-center py-1 text-primary fw-semibold" href="#"
+                                    style="font-size: 0.8rem;">
+                                    Marcar todas como leídas
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <!-- Menú de Cuenta existente -->
+                    <li class="nav-item dropdown">
+                        <!-- ... Tu estructura actual de Mi Cuenta ... -->
+                    </li>
+                </ul>
+
+                <!-- MENÚ DESPLEGABLE DE CUENTA Y PERFIL -->
+                <li class="nav-item dropdown ms-lg-3">
+                    <a class="nav-link user-menu-btn dropdown-toggle d-flex align-items-center gap-2" href="#"
+                        role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        <div class="user-avatar">
+                            <span id="userInitials">U</span>
+                        </div>
+                        <span id="userName" class="user-name-text">Mi cuenta</span>
+                        <i class="bi bi-chevron-down small"></i>
+                    </a>
+
+                    <ul class="dropdown-menu dropdown-menu-end user-dropdown shadow">
+                        <li>
+                            <div class="dropdown-header-user p-3 border-bottom">
+                                <div class="d-flex align-items-center gap-3">
+                                    <div class="user-avatar-lg bg-pets-blue text-space-dark rounded-circle d-flex align-items-center justify-content-center fw-bold"
+                                        style="width: 45px; height: 45px;">
+                                        <span id="userInitialsLg">UP</span>
+                                    </div>
+                                    <div>
+                                        <p class="mb-0 fw-bold text-dark" id="userFullName">Usuario Pruebas</p>
+                                        <small class="text-muted" id="userEmail">test@petsuniverse.com</small>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <a class="dropdown-item py-2" href="Perfil.html">
+                                <i class="bi bi-person-circle me-2 text-pets-blue"></i> Mi Perfil
+                            </a>
+                        </li>
+                        <li>
+                            <a class="dropdown-item py-2" href="Mascotas.html">
+                                <i class="bi bi-heart-fill me-2 text-pets-blue"></i> Mis Mascotas
+                            </a>
+                        </li>
+                        <li>
+                            <a class="dropdown-item py-2" href="Citas.html">
+                                <i class="bi bi-calendar-check me-2 text-pets-blue"></i> Mis Citas
+                            </a>
+                        </li>
+                        <li>
+                            <a class="dropdown-item py-2" href="Configuracion.html">
+                                <i class="bi bi-gear-fill me-2 text-pets-blue"></i> Configuración y Seguridad
+                            </a>
+                        </li>
+                        <li>
+                            <hr class="dropdown-divider">
+                        </li>
+                        <li>
+                            <a class="dropdown-item py-2 text-danger dropdown-item-logout" href="Login.html">
+                                <i class="bi bi-box-arrow-right me-2"></i> Cerrar Sesión
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <header id="hero-carousel" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-indicators">
+            <button type="button" data-bs-target="#hero-carousel" data-bs-slide-to="0" class="active"
+                aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#hero-carousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+        </div>
+
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="https://images.unsplash.com/photo-1583337130417-3346a1be7dee?q=80&w=1528"
+                    class="d-block w-100" alt="Perro">
+                <div class="carousel-caption text-start">
+                    <h1 class="display-4 fw-bold text-uppercase hero-title-gold">Conocé lo nuevo</h1>
+                    <p>Un espacio diseñado para la comodidad de tu mascota. Agenda su cita con un solo clic.</p>
+                    <a href="#servicios" class="btn-custom btn-outline-pets">Agendar ahora</a>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?q=80&w=1443"
+                    class="d-block w-100" alt="Gato">
+                <div class="carousel-caption">
+                    <h1 class="display-4 fw-bold text-uppercase hero-title-blue">Salud Galáctica</h1>
+                    <p>Atención especializada 24/7 para emergencias.</p>
+                </div>
+            </div>
+        </div>
+
+        <button class="carousel-control-prev" type="button" data-bs-target="#hero-carousel" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Anterior</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#hero-carousel" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Siguiente</span>
+        </button>
+    </header>
+
+    <section id="servicios" class="services-section container my-5">
+        <div class="text-center mb-4">
+            <h2 class="fw-bold section-main-title">Nuestros Servicios Estelares</h2>
+            <div class="service-line-divider"></div>
+        </div>
+
+        <!-- Pestañas de Filtro -->
+        <ul class="nav nav-pills custom-service-pills justify-content-center mb-5" id="pills-tab" role="tablist">
+            <li class="nav-item" role="presentation">
+                <button class="nav-link active" id="pills-medicina-tab" data-bs-toggle="pill"
+                    data-bs-target="#pills-medicina" type="button" role="tab" aria-selected="true">
+                    Medicina General
+                </button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" id="pills-prevencion-tab" data-bs-toggle="pill"
+                    data-bs-target="#pills-prevencion" type="button" role="tab" aria-selected="false">
+                    Prevención & Estética
+                </button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" id="pills-cirugia-tab" data-bs-toggle="pill" data-bs-target="#pills-cirugia"
+                    type="button" role="tab" aria-selected="false">
+                    Cirugía & Especialidades
+                </button>
+            </li>
+        </ul>
+
+        <!-- Contenido de las Pestañas -->
+        <div class="tab-content" id="pills-tabContent">
+
+            <!-- Categoría 1: Medicina General -->
+            <div class="tab-pane fade show active" id="pills-medicina" role="tabpanel">
+                <div class="row g-4 justify-content-center">
+                    <div class="col-12 col-md-6 col-lg-5">
+                        <div class="service-card-pro">
+                            <div class="card-img-wrapper">
+                                <img src="../../Public/img/consultaGeneral.jpg" alt="Consulta General">
+                            </div>
+                            <div class="card-body-pro">
+                                <h3 class="card-title-pro">Consulta General</h3>
+                                <p class="card-desc-pro">Evaluación física completa para el diagnóstico preventivo o
+                                    diagnóstico de síntomas.</p>
+                                <div class="price-badge-pro">Desde $45.000</div>
+                                <!-- Conectado al nuevo Modal Dinámico Multi-paso -->
+                                <button class="btn-agendar-pro" data-bs-toggle="modal"
+                                    data-bs-target="#modalAgendamientoGalactico">Agendar Cita</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-5">
+                        <div class="service-card-pro">
+                            <div class="card-img-wrapper">
+                                <img src="../../Public/img/consultaPrioritaria.jpg" alt="Consulta Prioritaria">
+                            </div>
+                            <div class="card-body-pro">
+                                <h3 class="card-title-pro">Consulta Prioritaria</h3>
+                                <p class="card-desc-pro">Atención médica rápida para casos no urgentes pero que
+                                    requieren valoración el mismo día.</p>
+                                <div class="price-badge-pro">Desde $60.000</div>
+                                <button class="btn-agendar-pro" data-bs-toggle="modal"
+                                    data-bs-target="#modalAgendamientoGalactico">Agendar Cita</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Categoría 2: Prevención & Estética -->
+            <div class="tab-pane fade" id="pills-prevencion" role="tabpanel">
+                <div class="row g-4 justify-content-center">
+                    <div class="col-12 col-md-6 col-lg-5">
+                        <div class="service-card-pro">
+                            <div class="card-img-wrapper">
+                                <img src="../../Public/img/vacunacion.jpg" alt="Vacunación">
+                            </div>
+                            <div class="card-body-pro">
+                                <h3 class="card-title-pro">Vacunación</h3>
+                                <p class="card-desc-pro">Esquema completo de inmunización para cachorros y adultos.</p>
+                                <div class="price-badge-pro">Desde $35.000</div>
+                                <button class="btn-agendar-pro" data-bs-toggle="modal"
+                                    data-bs-target="#modalAgendamientoGalactico">Agendar Cita</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-5">
+                        <div class="service-card-pro">
+                            <div class="card-img-wrapper">
+                                <img src="../../Public/img/peluqueria.jpg" alt="Peluquería y Baño">
+                            </div>
+                            <div class="card-body-pro">
+                                <h3 class="card-title-pro">Peluquería & Spa</h3>
+                                <p class="card-desc-pro">Corte de pelo según raza, baño relajante y limpieza de oídos y
+                                    uñas.</p>
+                                <div class="price-badge-pro">Desde $50.000</div>
+                                <button class="btn-agendar-pro" data-bs-toggle="modal"
+                                    data-bs-target="#modalAgendamientoGalactico">Agendar Cita</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Categoría 3: Cirugía & Especialidades -->
+            <div class="tab-pane fade" id="pills-cirugia" role="tabpanel">
+                <div class="row g-4 justify-content-center">
+                    <div class="col-12 col-md-6 col-lg-5">
+                        <div class="service-card-pro">
+                            <div class="card-img-wrapper">
+                                <img src="https://images.unsplash.com/photo-1599443015574-be5fe8a05783?q=80&w=800"
+                                    alt="Esterilización">
+                            </div>
+                            <div class="card-body-pro">
+                                <h3 class="card-title-pro">Esterilización</h3>
+                                <p class="card-desc-pro">Procedimiento quirúrgico seguro realizado con anestesia
+                                    monitoreada.</p>
+                                <div class="price-badge-pro">Desde $120.000</div>
+                                <button class="btn-agendar-pro" data-bs-toggle="modal"
+                                    data-bs-target="#modalAgendamientoGalactico">Agendar Cita</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- MODAL MULTI-PASO DE AGENDAMIENTO  -->
+    <div class="modal fade" id="modalAgendamientoGalactico" tabindex="-1" aria-labelledby="modalLabel"
+        aria-hidden="true" data-bs-backdrop="static">
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+            <div class="modal-content cosmic-modal-content border-0 shadow-lg rounded-4 overflow-hidden">
+
+                <!-- Cabecera del Modal con Título, -->
+                <div class="modal-header bg-space-dark text-white border-bottom-0 pb-0 pt-3 px-4">
+                    <div class="w-100">
+                        <div class="d-flex justify-content-between align-items-center mb-2">
+                            <h5 class="modal-title fw-bold small text-uppercase tracking-wider mb-0" id="modalLabel">
+                                <i class="bi bi-calendar-plus text-pets-blue me-2"></i> Agendamiento Galáctico
+                            </h5>
+
+                            <!-- Botón X explícito y accesible -->
+                            <button type="button"
+                                class="btn border-0 text-white rounded-circle p-2 fw-bold shadow-sm d-flex align-items-center justify-content-center"
+                                data-bs-dismiss="modal" aria-label="Cerrar"
+                                style="background-color: #f1c40f; width: 32px; height: 32px; font-size: 0.95rem; cursor: pointer;">
+                                ✕
+                            </button>
+                        </div>
+
+                        <!-- Barra de Progreso de Pasos -->
+                        <div class="wizard-steps-indicator d-flex justify-content-between pb-2 px-1">
+                            <div class="step-item active small" data-step-indicator="1">
+                                <span class="step-badge">1</span> Paciente
+                            </div>
+                            <div class="step-line"></div>
+                            <div class="step-item small" data-step-indicator="2">
+                                <span class="step-badge">2</span> Servicio
+                            </div>
+                            <div class="step-line"></div>
+                            <div class="step-item small" data-step-indicator="3">
+                                <span class="step-badge">3</span> Agenda
+                            </div>
+                            <div class="step-line"></div>
+                            <div class="step-item small" data-step-indicator="4">
+                                <span class="step-badge">4</span> Resumen
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Cuerpo del Modal -->
+                <div class="modal-body p-4 bg-light" style="max-height: 65vh; overflow-y: auto;">
+                    <form id="formAgendamientoDinamico">
+
+                        <!-- PASO 1: SELECCIÓN O REGISTRO RÁPIDO DE MASCOTA -->
+                        <div class="wizard-step-pane active" data-step="1">
+                            <h6 class="fw-bold text-space-dark mb-3 small">¿Qué paciente nos visitará hoy?</h6>
+
+                            <div class="row g-2 mb-3" id="petsContainerGrid">
+                                <div class="col-md-6">
+                                    <div class="card pet-selectable-card selected p-2 cursor-pointer" data-pet-id="1">
+                                        <div class="card-body d-flex align-items-center gap-2 p-1">
+                                            <img src="https://images.unsplash.com/photo-1543466835-00a7907e9de1?q=80&w=150"
+                                                alt="Max" class="rounded-circle" width="40" height="40"
+                                                style="object-fit: cover;">
+                                            <div>
+                                                <h6 class="fw-bold mb-0 small">Max</h6>
+                                                <small class="text-muted" style="font-size: 0.75rem;">Perro •
+                                                    Labrador</small>
+                                            </div>
+                                            <i
+                                                class="bi bi-check-circle-fill text-pets-blue ms-auto fs-5 check-icon"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="card pet-selectable-card p-2 cursor-pointer" data-pet-id="2">
+                                        <div class="card-body d-flex align-items-center gap-2 p-1">
+                                            <img src="https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?q=80&w=150"
+                                                alt="Michi" class="rounded-circle" width="40" height="40"
+                                                style="object-fit: cover;">
+                                            <div>
+                                                <h6 class="fw-bold mb-0 small">Michi</h6>
+                                                <small class="text-muted" style="font-size: 0.75rem;">Gato •
+                                                    Siamés</small>
+                                            </div>
+                                            <i
+                                                class="bi bi-check-circle-fill text-pets-blue ms-auto fs-5 check-icon d-none"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="text-center mb-2">
+                                <button type="button" class="btn btn-outline-secondary btn-sm rounded-pill px-3 py-1"
+                                    id="btnToggleNewPet" style="font-size: 0.75rem;">
+                                    <i class="bi bi-plus-circle me-1"></i> Registrar nueva mascota al instante
+                                </button>
+                            </div>
+
+                            <div id="newPetInlineForm" class="card border-dashed p-2 bg-white d-none mb-2">
+                                <h6 class="fw-bold small text-pets-blue mb-1" style="font-size: 0.75rem;">Datos de la
+                                    nueva mascota</h6>
+                                <div class="row g-2">
+                                    <div class="col-sm-6">
+                                        <input type="text" class="form-control form-control-sm" id="newPetName"
+                                            placeholder="Nombre de la mascota">
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <select class="form-select form-select-sm" id="newPetSpecies">
+                                            <option value="Perro">Perro</option>
+                                            <option value="Gato">Gato</option>
+                                            <option value="Otro">Otro</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- PASO 2: SELECCIÓN DEL SERVICIO VETERINARIO -->
+                        <div class="wizard-step-pane d-none" data-step="2">
+                            <h6 class="fw-bold text-space-dark mb-3 small">Selecciona el servicio médico requerido</h6>
+                            <div class="row g-2">
+                                <div class="col-md-4">
+                                    <div class="card service-card h-100 text-center p-2 selected cursor-pointer"
+                                        data-service="Consulta General" data-price="45000">
+                                        <div class="card-body p-1">
+                                            <i class="bi bi-heart-pulse-fill text-pets-blue fs-4 mb-1"></i>
+                                            <h6 class="fw-bold small mb-1">Consulta General</h6>
+                                            <span class="badge bg-light text-space-dark fw-bold"
+                                                style="font-size: 0.7rem;">$45.000 COP</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="card service-card h-100 text-center p-2 cursor-pointer"
+                                        data-service="Vacunación" data-price="60000">
+                                        <div class="card-body p-1">
+                                            <i class="bi bi-shield-fill-check text-pets-blue fs-4 mb-1"></i>
+                                            <h6 class="fw-bold small mb-1">Vacunación</h6>
+                                            <span class="badge bg-light text-space-dark fw-bold"
+                                                style="font-size: 0.7rem;">$60.000 COP</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="card service-card h-100 text-center p-2 cursor-pointer"
+                                        data-service="Estética y Spa" data-price="50000">
+                                        <div class="card-body p-1">
+                                            <i class="bi bi-scissors text-pets-blue fs-4 mb-1"></i>
+                                            <h6 class="fw-bold small mb-1">Estética y Spa</h6>
+                                            <span class="badge bg-light text-space-dark fw-bold"
+                                                style="font-size: 0.7rem;">$50.000 COP</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- PASO 3: SELECCIÓN DE VETERINARIO, FECHA Y HORA -->
+                        <div class="wizard-step-pane d-none" data-step="3">
+                            <h6 class="fw-bold text-space-dark mb-3 small">Configura especialista, fecha y hora</h6>
+                            <div class="row g-2">
+                                <div class="col-12 mb-1">
+                                    <label class="form-label small fw-bold mb-1">Veterinario Asignado</label>
+                                    <select class="form-select form-select-sm" id="selectDoctor" required>
+                                        <option value="" selected disabled>Selecciona profesional...</option>
+                                        <option value="Dra. Valentina Ríos (Medicina General)">Dra. Valentina Ríos
+                                            (Medicina General)</option>
+                                        <option value="Dr. Mateo Galindo (Cirugía y Urgencias)">Dr. Mateo Galindo
+                                            (Cirugía y Urgencias)</option>
+                                        <option value="Dra. Sofía Arango (Dermatología y Estética)">Dra. Sofía Arango
+                                            (Dermatología y Estética)</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-6 mb-1">
+                                    <label class="form-label small fw-bold mb-1">Fecha</label>
+                                    <input type="date" class="form-control form-control-sm" id="inputFechaCita"
+                                        required>
+                                </div>
+                                <div class="col-md-6 mb-1">
+                                    <label class="form-label small fw-bold mb-1">Hora</label>
+                                    <input type="time" class="form-control form-control-sm" id="inputHoraCita" required>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- PASO 4: RESUMEN Y CONFIRMACIÓN -->
+                        <div class="wizard-step-pane d-none" data-step="4">
+                            <div class="text-center mb-2">
+                                <h6 class="fw-bold text-space-dark small">Resumen de tu Cita</h6>
+                                <p class="text-muted small mb-2" style="font-size: 0.75rem;">Verifica los datos antes de
+                                    confirmar la reserva.</p>
+                            </div>
+
+                            <div class="card border-0 shadow-sm bg-white p-2 rounded-3">
+                                <ul class="list-unstyled mb-0 summary-list small">
+                                    <li class="d-flex justify-content-between py-1 border-bottom">
+                                        <span class="text-muted">Mascota:</span>
+                                        <strong id="sumPet" class="text-space-dark">Max</strong>
+                                    </li>
+                                    <li class="d-flex justify-content-between py-1 border-bottom">
+                                        <span class="text-muted">Servicio:</span>
+                                        <strong id="sumService" class="text-space-dark">Consulta General</strong>
+                                    </li>
+                                    <li class="d-flex justify-content-between py-1 border-bottom">
+                                        <span class="text-muted">Especialista:</span>
+                                        <strong id="sumDoctor" class="text-space-dark">Dra. Valentina Ríos</strong>
+                                    </li>
+                                    <li class="d-flex justify-content-between py-1 border-bottom">
+                                        <span class="text-muted">Fecha y Hora:</span>
+                                        <strong id="sumDateTime" class="text-space-dark">Seleccionar fecha/hora</strong>
+                                    </li>
+                                    <li class="d-flex justify-content-between py-1 pt-2">
+                                        <span class="text-muted fw-bold">Total:</span>
+                                        <strong id="sumPrice" class="text-pets-blue">$45.000 COP</strong>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+
+                    </form>
+                </div>
+
+                <!-- Pie del Modal con Botones de Navegación -->
+                <div
+                    class="modal-footer bg-light border-top-0 px-4 py-3 d-flex justify-content-between align-items-center">
+                    <button type="button" class="btn btn-outline-secondary btn-sm rounded-pill px-4" id="btnPrevStep"
+                        style="display: none; height: 38px;">
+                        <i class="bi bi-arrow-left me-1"></i> Anterior
+                    </button>
+                    <button type="button" class="btn btn-primary-custom btn-sm rounded-pill px-4 ms-auto"
+                        id="btnNextStep" style="height: 38px;">
+                        Siguiente <i class="bi bi-arrow-right ms-1"></i>
+                    </button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <section id="nosotros" class="about-section py-5 my-5">
+        <div class="container">
+            <div class="row align-items-center g-5">
+
+                <div class="col-12 col-lg-6 text-center">
+                    <div class="about-visual-wrapper">
+                        <div class="cosmic-blob-bg"></div>
+                        <img src="../../Public/img/nosotros.jpg" alt="Clínica Veterinaria Pets Universe"
+                            class="about-img-organic img-fluid">
+                    </div>
+                </div>
+
+                <div class="col-12 col-lg-6">
+                    <div class="about-content-box">
+                        <h6 class="text-pets-blue text-uppercase fw-bold tracking-wide mb-2">
+                            <i class="bi bi-stars me-1"></i> Conéctate con el universo veterinario que tu compañero
+                            necesita.
+                        </h6>
+                        <h2 class="fw-bold section-main-title mb-4">Sobre Nosotros</h2>
+                        <p class="text-muted mb-3 leading-relaxed">
+                            Bienvenido a <strong>Pets Universe</strong>, el espacio donde la salud de tu mascota es
+                            nuestra máxima prioridad. Somos una clínica veterinaria diseñada para ofrecer una
+                            experiencia médica sin estrés, combinando instalaciones modernas con el amor y la paciencia
+                            que tus mejores amigos se merecen.
+                        </p>
+                        <p class="text-muted mb-4 leading-relaxed">
+                            Nuestro propósito es simplificar tu vida y garantizar el bienestar animal a través de una
+                            plataforma digital confiable. Aquí puedes agendar citas de manera rápida, llevar un control
+                            estricto de su historial médico y acceder a profesionales apasionados porque, en nuestro
+                            universo, <span class="text-space-dark fw-bold">cada mascota es una estrella</span>.
+                        </p>
+
+                        <div class="row g-3 mt-2">
+                            <div class="col-sm-6">
+                                <div class="d-flex align-items-center gap-2">
+                                    <i class="bi bi-check-circle-fill text-pets-blue fs-5"></i>
+                                    <span class="fw-semibold text-space-dark">Agendamiento en 1 Clic</span>
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="d-flex align-items-center gap-2">
+                                    <i class="bi bi-check-circle-fill text-pets-blue fs-5"></i>
+                                    <span class="fw-semibold text-space-dark">Atención Especializada</span>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer-section py-4 text-center">
+        <div class="container">
+            <img src="../../Public/img/icono2.0Sin_Fondo_Con_Borde.png" alt="Icono" class="footer-icon mb-3">
+            <h4>Pets<span class="text-pets-blue">Universe</span></h4>
+            <p class="opacity-50 mt-3">&copy; 2026 Pets Universe. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../../Public/js/scripts.js"></script>
+
+</body>
+
+</html>
